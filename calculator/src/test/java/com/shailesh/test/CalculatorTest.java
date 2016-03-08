@@ -11,9 +11,17 @@ import static org.junit.Assert.assertThat;
 public class CalculatorTest {
 
     @Test
-    public void additionFunctionalityOfCalculator() {
+    public void additionFunctionalityOfCalculator() throws Exception {
         Calculator calculator = new Calculator();
         Integer actualSum = calculator.add("1,2");
         assertThat(actualSum, is(3));
+    }
+
+
+    @Test
+    public void additionFunctionalityOfCalculatorWithPipeSeparatedInput() throws Exception {
+        Calculator calculator = new Calculator();
+        Integer actualSum = calculator.add("2|2");
+        assertThat(actualSum, is(4));
     }
 }
