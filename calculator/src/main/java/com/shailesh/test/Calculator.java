@@ -1,7 +1,5 @@
 package com.shailesh.test;
 
-import java.util.Arrays;
-
 import static java.lang.Integer.valueOf;
 
 /**
@@ -9,11 +7,17 @@ import static java.lang.Integer.valueOf;
  */
 public class Calculator {
     public Integer add(String numbers) {
+        //^($|\\d)*\\W{1}\\d+
         int sum = 0;
-        String sanitizedNumbers[] = numbers.split("\\W");
+        if (numbers.isEmpty()) {
+            return sum;
+        } else {
+            String sanitizedNumbers[] = numbers.split("\\W");
 
-        for (String number : Arrays.asList(sanitizedNumbers)) {
-            sum += valueOf(number);
+            for (int index = 0; index < sanitizedNumbers.length; index++) {
+                sum += valueOf(sanitizedNumbers[index]);
+            }
+
         }
         return sum;
     }
