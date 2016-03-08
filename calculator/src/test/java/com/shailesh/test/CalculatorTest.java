@@ -11,7 +11,7 @@ import static org.junit.Assert.assertThat;
 public class CalculatorTest {
 
     @Test
-    public void additionalFunctionalityOfCalculator() {
+    public void additionFunctionalityOfCalculator() {
         Calculator calculator = new Calculator();
         Integer actualSum = calculator.add("1,2");
         assertThat(actualSum, is(3));
